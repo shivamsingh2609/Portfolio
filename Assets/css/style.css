@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-body: #b6cbce;
+    --color-heading: #ffffff;
+    --color-base: #030303;
+    --color-base2: #1a1a3c;
+    --color-brand: #2aec10fd;
+    --color-brand2: #5af700;
+    --sidebar-width: 240px;
+    --font-base: "Bai Jamjuree", sans-serif;
+    --transition: all 0.3s ease-in-out;
+}
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base);
+    line-height: 1.6;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: var(--transition);
+}
+a:hover {
+    color: var(--color-brand);
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.text-brand {
+    color: #ff5100;
+}
+
+.bg-base {
+    background-color: var(--color-base);
+    border-radius: 10px;
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.shadow-effect {
+    transition: var(--transition);
+    border-radius: 10px;
+}
+.shadow-effect:hover {
+    box-shadow: 0px 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--color-brand);
+    color: var(--color-base);
+    border-radius: 50%;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--color-base);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.navbar .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    transition: var(--transition);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--color-brand);
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidebar-width);
+        background: linear-gradient(135deg, #271d87 0%, #1a1148 100%), url(../images/sidebar-img.jpg) no-repeat center center/cover;
+    }
+
+    .navbar-brand img {
+        border: 8px solid var(--color-brand);
+        border-radius: 50%;
+    }
+
+    #content-wrapper {
+        padding-left: var(--sidebar-width);
+    }
+}
+
+/* BUTTONS */
+button,
+.btn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    padding: 12px 28px;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border: none;
+    color: var(--color-base);
+    box-shadow: 0 4px 15px rgba(90, 247, 0, 0.4);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background-color: var(--color-brand2);
+    color: var(--color-base);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(90, 247, 0, 0.6);
+}
+
+/* LINKS */
+.link-custom {
+    font-weight: 700;
+    position: relative;
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: var(--transition);
+}
+
+.link-custom:hover::after {
+    width: 100%;
+}
+
+/* CARD */
+.card-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+.card-custom:hover {
+    transform: translateY(-5px);
+}
+.card-custom .card-custom-image img {
+    transition: var(--transition);
+}
+.card-custom:hover .card-custom-image img {
+    transform: scale(1.1);
+}
+
+/* FORM - CONTACT */
+#contact .form-control {
+    background-color: var(--color-base);
+    border: 2px solid var(--color-base);
+    color: var(--color-body);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+#contact .form-control:focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px rgba(90, 247, 0, 0.25);
+}
+#contact .form-control::placeholder {
+    color: var(--color-body);
+}
+#contact input.form-control {
+    height: 44px;
+}
+
+/* SOCIAL ICONS */
+.social-icons a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-base);
+    border-radius: 50%;
+    font-size: 22px;
+    transition: var(--transition);
+}
+.social-icons a:hover {
+    background-color: rgba(255, 81, 0, 0.9);
+    color: #fff;
+    transform: scale(1.1);
+}
+/* Navbar Enhancements */
+.enhanced-navbar {
+    background: rgba(3, 3, 3, 0.95);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 999;
+}
+
+.enhanced-navbar .nav-link {
+    padding: 12px 20px;
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.enhanced-navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    height: 2px;
+    width: 0%;
+    background: var(--color-brand);
+    transition: width 0.3s ease;
+}
+
+.enhanced-navbar .nav-link:hover::after,
+.enhanced-navbar .nav-link.active::after {
+    width: 100%;
+}
+
+.enhanced-navbar .nav-link:hover {
+    color: var(--color-brand);
+    transform: translateX(3px);
+}
+
+/* Avatar */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--color-brand);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* Mobile toggler customization */
+.custom-toggler {
+    border: none;
+}
+.custom-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    filter: brightness(1.5);
+}
+
+/* Animate nav items on large screens */
+@media (min-width: 992px) {
+    .nav-animated li {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 0.5s forwards;
+    }
+    .nav-animated li:nth-child(1) { animation-delay: 0.1s; }
+    .nav-animated li:nth-child(2) { animation-delay: 0.2s; }
+    .nav-animated li:nth-child(3) { animation-delay: 0.3s; }
+    .nav-animated li:nth-child(4) { animation-delay: 0.4s; }
+    .nav-animated li:nth-child(5) { animation-delay: 0.5s; }
+    .nav-animated li:nth-child(6) { animation-delay: 0.6s; }
+    .nav-animated li:nth-child(7) { animation-delay: 0.7s; }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
